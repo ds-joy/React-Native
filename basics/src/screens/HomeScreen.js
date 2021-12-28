@@ -1,16 +1,19 @@
 import React from 'react';
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 
-const HomeScreen = () => {
+// we can use props
+// or we can destructure props loke
+// ({navigation})
+const HomeScreen = ({navigation}) => {
   return <View>
       <Button 
         title='ComponentScreen'
-        onPress={()=> console.log('Button pressed')}
+        onPress={()=> navigation.navigate('Components')}
       />
-       <Button 
-        title='Component'
-        onPress={()=> console.log('Button pressed 2')}
-      />
+
+      <TouchableOpacity onPress={() => navigation.navigate('ListScreen')}>
+         <Text style={styles.text}>List Screen</Text>
+      </TouchableOpacity>
     </View>
 };
     
@@ -18,6 +21,8 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   text: {
     fontSize: 30,
+    textAlign:'center',
+    marginTop:30,
   },
 });
 
