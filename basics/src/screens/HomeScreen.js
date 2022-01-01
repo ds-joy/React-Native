@@ -6,6 +6,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 // ({navigation})
 const HomeScreen = ({navigation}) => {
   return <View>
+
       <Button 
         title='ComponentScreen'
         onPress={()=> navigation.navigate('Components')}
@@ -14,7 +15,15 @@ const HomeScreen = ({navigation}) => {
       <TouchableOpacity onPress={() => navigation.navigate('ListScreen')}>
          <Text style={styles.text}>List Screen</Text>
       </TouchableOpacity>
+
+      <Button 
+        title='ImageScreen'
+        onPress={()=> navigation.navigate('ImageScreen')}
+      />
+
     </View>
+
+    
 };
     
 
